@@ -1,90 +1,30 @@
-/* reset S */
-body,
-dl,
-dd,
-ul,
-ol,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-form,
-header,
-section,
-article,
-footer {
-  margin: 0;
-}
-body,
-button,
-input,
-select,
-textarea {
-  font: 12px/1.5 tahoma, "\5FAE\8F6F\96C5\9ED1", sans-serif;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-}
-em,
-b {
-  font-style: normal;
-}
-a {
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-img {
-  border: 0;
-}
-body {
-  padding-top: 42px;
-}
-button,
-input,
-select,
-textarea {
-  outline: none;
-  font-size: 100%;
-}
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-td,
-th,
-ul,
-ol {
-  padding: 0;
-}
-/* reset E */
-
 /* fonts */
 @font-face {
   font-family: "Rock";
-  src: url("img/ROCK.ttf");
-}
+
+src: url("img/ROCK.ttf");
+
+  }
 
 /*Container*/
 .wrap {
   position: relative;
-  overflow: hidden;
-  margin: -42px auto 0;
-  min-width: 1200px;
-  max-width: 1920px;
-  width: 100%;
-  height: 100%;
-  font-size: 0;
-}
+
+overflow: hidden;
+
+margin: -42px auto 0;
+
+min-width: 1200px;
+
+max-width: 1920px;
+
+width: 100%;
+
+height: 100%;
+
+font-size: 0;
+
+  }
 
 /*header & menu*/
 .header {
@@ -101,111 +41,164 @@ ol {
   filter: invert(1) hue-rotate(180deg);
 }
 
-
 /*Black 1*/
 .wrapper1 {
   overflow: hidden;
-  height: 600px;
-  background: url(../img/bg_01.png) no-repeat center;
-}
+
+height: 600px;
+
+background: url(../img/bg_01.png) no-repeat center;
+
+  }
 .main {
   position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-  width: 1200px;
-  height: 100%;
-}
+
+overflow: hidden;
+
+margin: 0 auto;
+
+width: 1200px;
+
+height: 100%;
+
+  }
 
 /*Black 2*/
 .wrapper2 {
   overflow: hidden;
-  height: 600px;
-  background: url(../img/bg_02.png) no-repeat center;
-}
+
+height: 600px;
+
+background: url(../img/bg_02.png) no-repeat center;
+
+  }
 
 /*Black 3*/
 .wrapper3 {
   overflow: hidden;
-  height: 600px;
-  background: url(../img/bg_03.png) no-repeat center;
-}
+
+height: 600px;
+
+background: url(../img/bg_03.png) no-repeat center;
+
+  }
 
 /*Black 4*/
 .wrapper4 {
   overflow: hidden;
-  height: 600px;
-  background: url(../img/bg_04.png) no-repeat center;
-}
+
+height: 600px;
+
+background: url(../img/bg_04.png) no-repeat center;
+
+  }
 
 /*Black 5*/
 .wrapper5 {
   overflow: hidden;
-  height: 1080px;
-  background: url(../img/bg_05.jpg) no-repeat center;
-}
+
+height: 1080px;
+
+background: url(../img/bg_05.jpg) no-repeat center;
+
+  }
 
 /*foot*/
 .footer {
   position: relative;
-  margin-top: 0px;
-  padding-top: 20px;
-  min-width: 1200px;
-  height: 98px;
-  background: #000000;
-  color: #fff;
-  text-align: center;
-  font-size: 12px;
-  font-family: "tahoma";
-  line-height: 25px;
-}
+
+margin-top: 0px;
+
+padding-top: 20px;
+
+min-width: 1200px;
+
+height: 98px;
+
+background: #000000;
+
+color: #fff;
+
+text-align: center;
+
+font-size: 12px;
+
+font-family: "tahoma";
+
+line-height: 25px;
+
+  }
 
 .footer a {
   color: #fff;
-  text-decoration: none;
-}
+
+text-decoration: none;
+
+  }
 
 /*dialog styles*/
 .dialog {
   width: 806px;
-  height: 623px;
-  background: url(../img/popup-bg.png) no-repeat;
-}
+
+height: 623px;
+
+background: url(../img/popup-bg.png) no-repeat;
+
+  }
 
 .dialog .dia-con {
   position: relative;
 }
 .dialog .dia-close {
   position: absolute;
-  top: 0;
-  right: -21px;
-  width: 46px;
-  height: 46px;
-  background: url(../img/close-btn.png) no-repeat;
-}
+
+top: 0;
+
+right: -21px;
+
+width: 46px;
+
+height: 46px;
+
+background: url(../img/close-btn.png) no-repeat;
+
+  }
 #recordinfo .dia-con {
   width: 760px;
-  height: 596px;
-}
 
-/*������ styles*/
+height: 596px;
+
+  }
+
+/*滚动条 styles*/
 .scrollbar {
   overflow-x: hidden;
-  overflow-y: scroll;
-  width: 750px;
-  height: 320px;
-}
+
+overflow-y: scroll;
+
+width: 750px;
+
+height: 320px;
+
+  }
 .scrollbar::-webkit-scrollbar {
-  /*������������ʽ*/
-  width: 10px; /*�߿��ֱ��Ӧ�����������ĳߴ�*/
-  height: 75px;
-}
+  /*滚动条整体样式*/
+  width: 10px; /*高宽分别对应横竖滚动条的尺寸*/
+
+height: 75px;
+
+  }
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  /*����������С����*/
+
+/*滚动条里面小方块*/
   background: #ffffff;
-}
+
+  }
 .scrollbar::-webkit-scrollbar-track {
   border-radius: 10px;
-  /*������������*/
+
+/*滚动条里面轨道*/
   background: #243386;
-}
+
+  }
