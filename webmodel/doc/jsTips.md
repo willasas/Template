@@ -254,5 +254,3 @@ function unsetCookie(name) {
     document.cookie = name + "= ; expires=" + new Date(0);
 }
 ```
-
-#### 

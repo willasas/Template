@@ -153,6 +153,12 @@ a:hover {
     text-decoration: none;
     filter: brightness(1.2);
 }
+/*样式默认链接*/
+a[href]:not([class]){
+    color: #999;
+    text-decoration: none;
+    transition: all ease-in-out .3s;
+}
 ```
 
 #### a标签设置可选区域（大小）
@@ -305,6 +311,22 @@ em {
 }
 ```
 
+#### 垂直居中任何元素
+
+```css
+html, body{
+    height: 100%;
+    margin: 0;
+}
+body{
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+}
+```
+
 #### 清除最后一个元素右边距
 
 ```css
@@ -376,3 +398,13 @@ em {
 7. 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。
 8. 嵌入js放在底部，虽然放在底部照样会阻塞所有呈现，但不会阻塞资源下载。
 9. 如果嵌入JS放在head中，请把嵌入JS放在CSS头部。
+
+#### 等宽表格单元格
+
+```css
+.calendar {
+    table-layout: fixed;
+}
+```
+
+#### 
