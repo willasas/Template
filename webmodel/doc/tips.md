@@ -380,11 +380,11 @@ body{
 #### 页面加载优化
 
 1. 优化图片
-2. 图像格式的选择（GIF：提供的颜色较少，可用在一些对颜色要求不高的地方） 
-3. 优化CSS（压缩合并css，如margin-top,margin-left...) 
-4. 网址后加斜杠（如www.campr.com/目录，会判断这个“目录是什么文件类型，或者是目录。） 
-5. 标明高度和宽度（如果浏览器没有找到这两个参数，它需要一边下载图片一边计算大小，如果图片很多，浏览器需要不断地调整页面。这不但影响速度，也影响浏览体验。 
-当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。从而加载时间快了，浏览体验也更好了。） 
+2. 图像格式的选择（GIF：提供的颜色较少，可用在一些对颜色要求不高的地方）
+3. 优化CSS（压缩合并css，如margin-top,margin-left...)
+4. 网址后加斜杠（如www.campr.com/目录，会判断这个“目录是什么文件类型，或者是目录。）
+5. 标明高度和宽度（如果浏览器没有找到这两个参数，它需要一边下载图片一边计算大小，如果图片很多，浏览器需要不断地调整页面。这不但影响速度，也影响浏览体验。
+当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。从而加载时间快了，浏览体验也更好了。）
 6. 减少http请求（合并文件，合并图片）。
 
 #### 性能优化
@@ -407,4 +407,136 @@ body{
 }
 ```
 
-#### 
+#### 边框渐变
+
+```css
+ .box{
+ width: 160px;
+ height: 48px;
+ border: 1px solid #ddd;
+ border-image: -webkit-linear-gradient(#5CD3FF, #8A65FA) 20 20;
+ border-image: -moz-linear-gradient(#5CD3FF, #8A65FA) 20 20;
+ border-image: -o-linear-gradient(#5CD3FF, #8A65FA) 20 20;
+ border-image: linear-gradient(#5CD3FF, #8A65FA) 20 20;
+ }
+```
+
+#### 文字上移效果
+
+```scss
+.box{
+    color: #131313;
+    height: 5.13889vw;
+    margin-bottom: 3.19444vw;
+    display: -ms-flexbox;
+    display: flex;
+}
+/* 页面滚动时添加条样式 */
+.f_enter {
+    -webkit-animation: fadeInUp 0.8s ease forwards;
+    animation: fadeInUp 0.8s ease forwards;
+    will-change: transform,opacity;
+}
+
+.f_ani {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+// 调用
+<div class=".box f_ani f_enter" data-animate="f_enter">
+    <div class="p7ci-left">
+        <img src="data:image/svg+xml;base64,">
+    </div>
+    <div class="p7ci-right">
+        <p class="part-7-h3">黑白</p>
+        <p class="part-7-h5">人像镜头</p>
+    </div>
+</div>
+```
+
+#### 图片无限缩放效果
+
+```scss
+@keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+    0%{
+        transform: scale(1);  /*开始为原始大小*/
+    }
+    25%{
+        transform: scale(1.1); /*放大1.1倍*/
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.1);
+    }
+}
+.ballon{
+    width: 150px;
+    height: 200px;
+    background: url("images/bg_01.png");
+    background-size: 150px 200px; //设置背景图片的大小
+    // -webkit-animation-name: scaleDraw; /*关键帧名称*/
+    // -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+    // -webkit-animation-iteration-count: infinite;  /*动画播放的次数*/
+    // -webkit-animation-duration: 5s; /*动画所花费的时间*/
+    -webkit-animation: scaleDraw 5s ease-in-out infinite;
+}
+// 调用
+<div class="ballon"></div>
+```
+
+#### 背景渐变
+
+```css
+/* 线性渐变,从左到右 */
+.linear-gradient{
+    width: 200px;
+    height: 100px;
+    border: 1px solid #000;
+    background: -webkit-linear-gradient( left,red,yellow,green,blue);
+    background: -moz-linear-gradient( right,red,yellow,green,blue);
+    background: -o-linear-gradient( right,red,yellow,green,blue);
+    background: linear-gradient(to right,red,yellow,green,blue);
+}
+
+/* 对角线，从左上到右下 */
+.diagonal-gradient{
+    width: 200px;
+    height: 100px;
+    border: 1px solid #000;
+    background: -webkit-linear-gradient( left top,red,yellow,green,blue);
+    background: -moz-linear-gradient( right bottom,red,yellow,green,blue);
+    background: -o-linear-gradient( right bottom,red,yellow,green,blue);
+    background: linear-gradient(to right bottom,red,yellow,green,blue);
+}
+
+/* 角度渐变 */
+.angle-gradient{
+    width: 200px;
+    height: 100px;
+    background: linear-gradient(45deg, red, yellow, green); /*角度45deg*/
+}
+
+/* 径向渐变 */
+.radial-gradient{
+    width: 200px;
+    height: 100px;
+    background: radial-gradient(red, green); /* 横向渐变 */
+    background: radial-gradient(circle, red, green); /* 纵向渐变 */
+    /* 最远角径向渐变 */
+    background: -webkit-radial-gradient(60% 40%,circle farthest-corner,red,yellow,green,blue);
+    background: -moz-radial-gradient(60% 40%,circle farthest-corner,red,yellow,green,blue);
+    background: -o-radial-gradient(60% 40%,circle farthest-corner,red,yellow,green,blue);
+    background: radial-gradient(60% 40%,circle farthest-corner,red,yellow,green,blue);
+}
+
+/* 重复渐变 */
+.repeat-gradient{
+    width: 200px;
+    height: 100px;
+    background:repeating-linear-gradient(to left,#ff0,#0f0) /* 重复的线性渐变*/
+    background:repeating-linear-gradient(to right,#ff0,#0f0);/* 重复的径向渐变*/
+}
+```
